@@ -4,6 +4,6 @@ Website for Cornell University's Alpha Omega Epsilon Beta Chi Chapter
 This organization is a registered student organization of Cornell University
 <br>
 
-Last updated FA24 by Angelina Chen
+Last updated SP25 by Angelina Chen
 <br>
 Previously maintined by Kaylin Chan (FA23)
