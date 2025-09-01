@@ -1445,6 +1445,30 @@ h6 {
   color: #0a98c0;
 }
 
+/* Equal Education & Employment */
+
+.ee-btn-wrapper {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.ee-btn {
+  display: inline-block;
+  background: #1bb1dc;
+  color: #fff !important;
+  border-radius: 30px;
+  padding: 6px 18px;
+  font-size: 10px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ee-btn:hover {
+  background: #1590b3;
+  text-decoration: none;
+  color: #fff !important;
+}
+
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/
