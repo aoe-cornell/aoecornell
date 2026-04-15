@@ -1019,6 +1019,15 @@ h6 {
   margin: 0 2px;
 }
 
+/* Lambda class photos: keep a consistent portrait crop */
+#team.lambdaclass-section .member img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 /* Clients Section
 --------------------------------*/
 
