@@ -7,3 +7,5 @@ This organization is a registered student organization of Cornell University
 Last updated SP26 by Claire Yu
 <br>
 Previously maintined by Kaylin Chan (FA23)
+
+Last updated FA26 by Gemie Sonamai
