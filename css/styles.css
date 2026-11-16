@@ -1,0 +1,316 @@
+/* =========================================================
+   Alpha Omega Epsilon · Beta Chi Chapter · Cornell
+   Shared styles for every page.
+   To change the main blue everywhere, edit --accent below.
+   ========================================================= */
+
+:root {
+  --accent: #1F3FBF;        /* Royal blue */
+  --accent-dark: #152D8C;
+  --ink: #1A2033;           /* Main text */
+  --muted: #3E4558;         /* Body text */
+  --soft: #5A6172;          /* Small captions */
+  --silver: #A7ADB8;        /* Silver lines */
+  --line: #DADDE3;          /* Light borders */
+  --mist: #F4F5F8;          /* Light gray sections */
+  --photo: #E2E6EE;         /* Empty photo boxes */
+  --white: #FFFFFF;
+
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Karla', system-ui, sans-serif;
+  --script: 'Pinyon Script', cursive;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+/* Overall size on laptops/desktops. 1 = original, 0.85 = 85%.
+   Lower it to make everything smaller, raise it toward 1 for bigger. */
+@media (min-width: 761px) {
+  html { zoom: 0.85; }
+}
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+h1, h2, h3, p { margin: 0; }
+
+/* ---------- Layout helpers ---------- */
+.container { max-width: 1160px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.narrow { max-width: 860px; }
+.tight { max-width: 760px; }
+.section { padding-top: 104px; padding-bottom: 104px; }
+.section-sm { padding-top: 88px; padding-bottom: 88px; }
+.mist { background: var(--mist); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.center { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.stack { display: flex; flex-direction: column; }
+.gap-8 { gap: 8px; } .gap-12 { gap: 12px; } .gap-18 { gap: 18px; } .gap-24 { gap: 24px; }
+.gap-40 { gap: 40px; } .gap-48 { gap: 48px; } .gap-56 { gap: 56px; } .gap-88 { gap: 88px; }
+
+/* ---------- Type ---------- */
+.script { font-family: var(--script); color: var(--accent); line-height: 1; font-size: 36px; }
+.script-lg { font-size: 40px; }
+.eyebrow { font-size: 15px; letter-spacing: 4px; text-transform: uppercase; color: var(--soft); }
+.display { font-family: var(--serif); font-weight: 500; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; }
+.display-xl { font-size: clamp(44px, 6vw, 76px); letter-spacing: 1px; }
+.h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 3.8vw, 44px); line-height: 1.15; }
+.h3 { font-family: var(--serif); font-weight: 600; font-size: 26px; line-height: 1.2; }
+.lead { font-size: 19px; line-height: 1.8; color: var(--muted); }
+.body { color: var(--muted); line-height: 1.7; font-size: 18px; }
+.motto { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--accent); }
+.rule { display: block; width: 40px; height: 1px; background: var(--silver); }
+.rule-wide { width: 60px; margin-top: 6px; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 15px 34px;
+  font-family: var(--sans); font-size: 13px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase; text-decoration: none;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--white);
+  cursor: pointer;
+}
+.btn:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: var(--white); }
+.btn-outline { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-outline:hover { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.btn-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+/* ---------- Top bar + navigation ---------- */
+.topbar {
+  background: var(--accent); color: var(--white);
+  font-size: 14px; letter-spacing: 3px; text-transform: uppercase;
+  text-align: center; padding: 11px 16px;
+}
+.site-header { border-bottom: 1px solid var(--line); background: var(--white); }
+.nav {
+  max-width: 1160px; margin: 0 auto; padding: 28px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+.monogram {
+  width: 68px; height: 68px; border-radius: 50%;
+  border: 1.5px solid var(--accent); outline: 1px solid var(--silver); outline-offset: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-weight: 600; font-size: 26px;
+  color: var(--accent); text-decoration: none;
+}
+.nav-links {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 36px;
+  font-size: 16px; letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+}
+.nav-links a { color: var(--ink); text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid transparent; }
+.nav-links a:hover { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--accent); border-bottom-color: var(--accent); }
+.nav-links .nav-cta { background: var(--accent); color: var(--white); padding: 10px 20px; font-weight: 600; border: 0; }
+.nav-links .nav-cta:hover { background: var(--accent-dark); color: var(--white); }
+.nav-links .nav-cta[aria-current="page"] { color: var(--white); outline: 1px solid var(--accent); outline-offset: 3px; }
+.menu-toggle { display: none; }
+
+/* ---------- Photos ----------
+   Each photo box shows its label until you add the image file
+   named in its <img src="images/...">. Drop the file into the
+   images folder with that exact name and it appears automatically. */
+.photo {
+  position: relative; overflow: hidden; width: 100%;
+  background: var(--photo);
+  display: flex; align-items: flex-end; justify-content: center;
+  padding-bottom: 20px;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--soft);
+}
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo-hero { max-width: 980px; height: auto; padding: 0; display: block; }
+.photo-hero img { position: static; height: auto; }
+.photo-composite { height: 460px; }
+.photo-tall { height: 400px; }
+.photo-portrait { height: 320px; }
+.photo-event { height: 300px; }
+.photo-feature { height: 520px; }
+.photo-board {
+  width: 180px; height: 225px;
+  border: 1px solid var(--white); outline: 1px solid var(--silver); outline-offset: 5px;
+  align-items: center; padding-bottom: 0;
+}
+
+/* ---------- Grids ---------- */
+.grid { width: 100%; display: grid; }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+.grid-pillars { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+.grid-people { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 40px 28px; }
+.grid-logos { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; }
+.grid-events { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+
+/* ---------- Pillars ---------- */
+.pillar {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px;
+  background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--accent);
+  padding: 40px 28px 44px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.pillar:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(26, 32, 51, .08); }
+.pillar .numeral {
+  width: 58px; height: 58px; border-radius: 50%;
+  border: 1px solid var(--accent); outline: 1px solid var(--line); outline-offset: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--accent);
+  margin-bottom: 6px;
+}
+.pillar h3 { font-family: var(--serif); font-weight: 600; font-size: 28px; }
+.pillar p { color: var(--muted); line-height: 1.7; max-width: 300px; font-size: 18px; }
+
+/* ---------- People cards ---------- */
+.person { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; }
+.person h3 { margin-top: 6px; font-size: 29px; }
+.person .meta { font-size: 17px; color: var(--muted); }
+.person .role { margin-top: 14px; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.socials { display: flex; gap: 10px; margin-top: 4px; }
+.socials a {
+  width: 44px; height: 44px; border: 1px solid var(--silver); background: var(--white);
+  display: flex; align-items: center; justify-content: center; color: var(--accent);
+}
+.socials a:hover { border-color: var(--accent); background: var(--accent); color: var(--white); }
+.group-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+
+/* ---------- Logo boxes ---------- */
+.logo-box {
+  height: 96px; border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 12px;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--soft);
+}
+.logo-box img { max-height: 56px; width: auto; object-fit: contain; }
+
+/* ---------- Split layouts ---------- */
+.split { display: flex; flex-wrap: wrap; align-items: center; gap: 56px; }
+.split > * { min-width: 0; }
+.split-text { flex: 1.2 1 420px; display: flex; flex-direction: column; gap: 18px; }
+.split-media { flex: 1 1 360px; }
+.lily-panel {
+  height: 520px; background: var(--mist); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ---------- Event cards ---------- */
+.event-card {
+  background: var(--white); border: 1px solid var(--line); padding: 48px 36px;
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px;
+}
+.event-card.featured { border-color: var(--accent); }
+.event-card h2 { font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1.15; margin-top: 8px; }
+.event-card p { color: var(--muted); line-height: 1.8; font-size: 18px; }
+.icon-ring {
+  width: 76px; height: 76px; border-radius: 50%;
+  border: 1px solid var(--accent); outline: 1px solid var(--line); outline-offset: 5px;
+  display: flex; align-items: center; justify-content: center; color: var(--accent);
+}
+
+/* ---------- Invitation-style frame ---------- */
+.band { background: var(--accent); padding: 96px 24px; }
+.frame-outer { max-width: 760px; margin: 0 auto; background: var(--white); padding: 10px; }
+.frame-inner {
+  border: 1px solid var(--silver); outline: 1px solid var(--silver); outline-offset: -8px;
+  padding: 64px 40px; display: flex; flex-direction: column; gap: 22px;
+}
+.frame-inner.center { align-items: center; text-align: center; gap: 16px; }
+.small-caps { font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--soft); }
+.big-script { font-family: var(--script); color: var(--accent); font-size: clamp(40px, 6vw, 60px); line-height: 1.05; }
+
+/* ---------- Forms ---------- */
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 8px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.field input, .field textarea {
+  font-family: var(--sans); font-size: 16px; padding: 12px 14px;
+  border: 1px solid var(--silver); min-height: 44px; width: 100%; color: var(--ink); background: var(--white);
+}
+.field input:focus, .field textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+.field textarea { resize: vertical; }
+
+/* ---------- FAQ (uses built-in <details>, no code needed) ---------- */
+.faq { width: 100%; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  list-style: none; cursor: pointer; min-height: 44px; padding: 24px 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  font-family: var(--serif); font-weight: 600; font-size: 25px; color: var(--ink);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--sans); font-size: 24px; color: var(--accent); }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { padding: 0 0 24px; color: var(--muted); line-height: 1.8; font-size: 17px; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); }
+.site-footer .container { padding-top: 56px; padding-bottom: 56px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.footer-mark { font-family: var(--serif); font-size: 30px; color: var(--accent); }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; }
+.footer-note { font-size: 13px; color: var(--soft); }
+
+/* ---------- Focus (keyboard users) ---------- */
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- Event gallery (collage: photos keep their own shape) ---------- */
+.gallery { column-count: 3; column-gap: 16px; width: 100%; }
+.gallery figure {
+  break-inside: avoid; margin: 0 0 16px; position: relative; overflow: hidden;
+  background: var(--mist);
+}
+.gallery img { width: 100%; height: auto; display: block; transition: transform .4s ease; }
+.gallery figure:hover img { transform: scale(1.03); }
+.gallery figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; text-align: left;
+  padding: 32px 14px 12px; color: #fff; font-size: 15px; letter-spacing: 1px;
+  background: linear-gradient(transparent, rgba(26, 32, 51, .78));
+}
+@media (max-width: 900px) { .gallery { column-count: 2; } }
+@media (max-width: 560px) { .gallery { column-count: 1; } }
+
+/* Chapter photo on the Sisters page: shows the whole photo, never cropped */
+.photo-composite { height: auto; padding: 0; display: block; }
+.photo-composite img { position: static; height: auto; }
+
+/* ---------- What else do we do (home) ---------- */
+.affiliations { display: flex; flex-direction: column; gap: 56px; width: 100%; max-width: 960px; }
+.affiliations figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.affiliations figcaption { font-family: var(--serif); font-weight: 600; font-size: 28px; }
+.affiliations img { width: 100%; height: auto; display: block; background: var(--white); border: 1px solid var(--line); }
+
+/* =========================================================
+   PHONES & SMALL TABLETS
+   ========================================================= */
+@media (max-width: 760px) {
+  .section { padding-top: 64px; padding-bottom: 64px; }
+  .section-sm { padding-top: 56px; padding-bottom: 56px; }
+  .band { padding: 56px 16px; }
+  .container { padding-left: 16px; padding-right: 16px; }
+  .gap-88 { gap: 64px; } .gap-56 { gap: 36px; }
+
+  /* Collapsible menu */
+  .nav { flex-direction: row; justify-content: space-between; padding: 16px; }
+  .monogram { width: 52px; height: 52px; font-size: 20px; outline-offset: 3px; }
+  .menu-toggle {
+    display: inline-flex; align-items: center; gap: 10px;
+    min-height: 44px; padding: 10px 16px;
+    background: transparent; border: 1px solid var(--ink); color: var(--ink);
+    font-family: var(--sans); font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; cursor: pointer;
+  }
+  .nav-links {
+    display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .nav.open { flex-wrap: wrap; }
+  .nav.open .nav-links { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--line); }
+  .nav-links a { display: block; padding: 16px 4px; border-bottom: 0; }
+  .nav-links a[aria-current="page"] { border-bottom: 0; }
+  .nav-links .nav-cta { margin: 16px 0; text-align: center; }
+
+  .photo-feature, .lily-panel { height: 340px; }
+  .photo-tall { height: 320px; }
+  .frame-inner { padding: 44px 22px; }
+  .event-card { padding: 36px 22px; }
+  .faq summary { font-size: 21px; }
+  .split { gap: 32px; }
+}
